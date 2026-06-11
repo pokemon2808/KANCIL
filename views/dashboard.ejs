@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Admin - Presensi QR</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="layout-fixed">
+  <div class="wrapper">
+    <%- include('partials/sidebar', { active: 'dashboard' }) %>
+    <div class="content-wrapper">
+      <header class="content-header">
+        <button class="btn btn-light sidebar-toggle d-lg-none"><i class="bi bi-list"></i></button>
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
+          <div>
+            <h1 class="mb-1">Dashboard Realtime</h1>
+            <p class="text-muted mb-0">Monitoring presensi siswa, grafik keterlambatan, dan update kelas secara langsung.</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="row g-3 mb-4">
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="card shadow-sm h-100 border-start border-4 border-primary">
+              <div class="card-body">
+                <h6 class="text-uppercase text-muted mb-2">Total Siswa Hadir</h6>
+                <h2 class="mb-1"><%= totals.hadir %></h2>
+                <p class="text-muted mb-0">Siswa yang scan sebelum 07:30 hari ini.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="card shadow-sm h-100 border-start border-4 border-danger">
+              <div class="card-body">
+                <h6 class="text-uppercase text-muted mb-2">Total Siswa Terlambat</h6>
+                <h2 class="mb-1 text-danger"><%= totals.terlambat %></h2>
+                <p class="text-muted mb-0">Siswa yang scan setelah 07:30 hari ini.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="card shadow-sm h-100 border-start border-4 border-warning">
+              <div class="card-body">
+                <h6 class="text-uppercase text-muted mb-2">Belum Presensi</h6>
+                <h2 class="mb-1"><%= totals.belum_presensi %></h2>
+                <p class="text-muted mb-0">Siswa yang belum melakukan scan hari ini.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="card shadow-sm h-100 border-start border-4 border-success">
+              <div class="card-body">
+                <h6 class="text-uppercase text-muted mb-2">WhatsApp Terkirim</h6>
+                <h2 class="mb-1"><%= totals.whatsapp_sent %></h2>
+                <p class="text-muted mb-0">Jumlah notifikasi WhatsApp yang terkirim hari ini.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card shadow-sm p-4">
+          <h5 class="mb-3">Ringkasan Hari Ini</h5>
+          <p class="text-muted mb-0">Dashboard ini menampilkan kondisi presensi saat ini agar admin dapat melihat status kehadiran, keterlambatan, dan pengiriman notifikasi dengan cepat.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420">
+  <defs>
+    <style>
+      .box { fill: #f8f9fa; stroke: #343a40; stroke-width: 2; }
+      .title { font: bold 18px Arial, sans-serif; fill: #212529; }
+      .field { font: 14px Arial, sans-serif; fill: #212529; }
+      .arrow { stroke: #495057; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .label { font: 12px Arial, sans-serif; fill: #495057; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#495057" />
+    </marker>
+  </defs>
+
+  <rect x="40" y="40" width="260" height="190" rx="12" class="box" />
+  <text x="170" y="72" text-anchor="middle" class="title">classes</text>
+  <text x="60" y="106" class="field">id PK</text>
+  <text x="60" y="132" class="field">name</text>
+  <text x="60" y="158" class="field">created_at</text>
+
+  <rect x="360" y="40" width="280" height="260" rx="12" class="box" />
+  <text x="500" y="72" text-anchor="middle" class="title">students</text>
+  <text x="380" y="106" class="field">nomor_urut PK</text>
+  <text x="380" y="132" class="field">name</text>
+  <text x="380" y="158" class="field">class_id FK</text>
+  <text x="380" y="184" class="field">phone</text>
+  <text x="380" y="210" class="field">parent_phone</text>
+  <text x="380" y="236" class="field">points</text>
+  <text x="380" y="262" class="field">last_scan</text>
+  <text x="380" y="288" class="field">status</text>
+
+  <rect x="700" y="60" width="260" height="240" rx="12" class="box" />
+  <text x="830" y="92" text-anchor="middle" class="title">notifications</text>
+  <text x="720" y="126" class="field">id PK</text>
+  <text x="720" y="152" class="field">student_nomor FK</text>
+  <text x="720" y="178" class="field">class_id FK</text>
+  <text x="720" y="204" class="field">message</text>
+  <text x="720" y="230" class="field">provider</text>
+  <text x="720" y="256" class="field">provider_link</text>
+  <text x="720" y="282" class="field">error_message</text>
+  <text x="720" y="308" class="field">sent_at</text>
+
+  <path class="arrow" d="M300,140 C330,140 330,180 360,180" />
+  <text x="330" y="135" class="label">class_id</text>
+  <path class="arrow" d="M560,220 C610,220 650,220 700,220" />
+  <text x="630" y="215" class="label">student_nomor</text>
+  <path class="arrow" d="M560,160 C650,160 650,160 700,160" />
+  <text x="630" y="155" class="label">class_id</text>
+</svg>
