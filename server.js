@@ -275,7 +275,7 @@ app.get('/scan/:classId', (req, res) => {
 const schoolLocation = {
   lat: -3.543247742936886,
   lon: 118.98159579854247,
-  allowedRadiusMeters: 10,
+  allowedRadiusMeters: 100,
 };
 
 function formatAsTime(t) {
